@@ -1,0 +1,59 @@
+@keyframes xBorder{
+	from {border: dashed 2px #ff0000}
+    to {border: dashed 2px #4a84c3}
+}
+
+html,body{width: 100%; height: 100%; overflow: hidden;}
+body{background: #f9f9f9; font-family: Helvetica,Tahoma,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei",STXihei,STHeiti,Heiti,SimSun,sans-serif}
+.hidden{height: 0; overflow: hidden;}
+.blank7{height: 7px}
+.bold{font-weight: bold}
+header{height: 3.5rem; width: 100%; border-bottom: solid 1px #bdbdbd}
+header .tit{line-height: 3.5rem;}
+.container{height: 100%; padding: 3.7rem 0 0.5rem 0}
+.container > .row{height: 100%;}
+.container > .row > .panel{padding-top: 2.5rem}
+.container > .row > .panel .list-group-item{padding: .5rem 1.25rem}
+.container > .row > .panel .tips{line-height: 1.5rem}
+.container > .row > .panel .tips p{margin-bottom: 0}
+.container > .row > .panel .tips .p1{font-size: 1rem}
+.container > .row > .panel .tips .p2{font-size: .8rem}
+.container > .row > .panel .panel-pic{font-size: .8rem; margin: .5rem 0 0 0}
+.container > .row > .panel .panel-pic.disabled{pointer-events: none; opacity: 0.6}
+.container > .row > .panel .panel-txt{font-size: .8rem; margin: .5rem 0 0 0}
+.container > .row > .panel .panel-txt.disabled{pointer-events: none; opacity: 0.6}
+.container > .row > .panel .btn-group{}
+.container > .row > .panel .btn-group .btn{font-size: 0.8rem}
+.container > .row > .main{height: 100%}
+.container > .row > .main .canvas-wrapper{height: 100%; padding-top: 2.5rem}
+.container > .row > .main .canvas{height: 100%; overflow-x: hidden; overflow-y: auto; background-color: #fdfdfd; border:solid 1px rgba(0,0,0,.125);  box-shadow: 0 0 3px 1px #e3f4fb;  transform-origin: left top; transform: scale(1)}
+.container > .row > .main .canvas .item{position: relative; height: auto; }
+.container > .row > .main .canvas .item.active{border: dashed 2px #4a84c3}
+.container > .row > .main .canvas .item .drag-handle{position: absolute; left: 0; top: 0; color: #72b3f9; font-size: 1.5rem; cursor: -webkit-grabbing; z-index: 101}
+.container > .row > .main .canvas .item .btn-remove{position: absolute; right: 1px; top: 1px; cursor: pointer; color: #ff0000; background-color: #ffffff; border-radius: 50%; display: none}
+.container > .row > .main .canvas .item.active .btn-remove{display: block;}
+.container > .row > .main .canvas .item .fa-times-circle:hover{transform: scale(1.2); background-color: #ffff00;}
+.container > .row > .main .canvas .pic-wrapper{overflow: hidden;}
+.container > .row > .main .canvas .pic{width: 100%; height: auto; resize: both; overflow: auto}
+.container > .row > .main .canvas .item .txt{position: absolute; left: 50%; top: 48%; margin-left: -50px; z-index: 100; height: auto; cursor: move;}
+.container > .row > .main .canvas .item .txt .coor{ width: 10px; height: 10px; overflow: hidden; cursor: se-resize; position: absolute; right: 0; bottom: 0; background: url(./coor.png) no-repeat center/100%; display: none}
+.container > .row > .main .canvas .item .txt .btn-remove{position: absolute; right: -10px; top: -9px; font-size: 1rem; display: none}
+.container > .row > .main .canvas .item .txt:hover .btn-remove{display: block;}
+.container > .row > .main .canvas .item .txt.active{border: dotted 2px #dddddd; box-shadow: 0 0 3px 1px #dedede; cursor: text}
+.container > .row > .main .canvas .item .txt.p-top{width: 100% !important; left: 0 !important; top: 0 !important; bottom: auto !important; margin: 0 !important}
+.container > .row > .main .canvas .item .txt.p-center{width: 100% !important; left: 0 !important; top: 48% !important; text-align: center !important; margin: 0 !important}
+.container > .row > .main .canvas .item .txt.p-bottom{width: 100% !important; left: 0 !important; top: auto !important; bottom: 0 !important; margin: 0 !important}
+.container > .row > .main .canvas .item .txt.p-out-top{width: 100% !important; position: relative !important; left: 0 !important; top: auto !important; margin: 0 !important}
+.container > .row > .main .canvas .item .txt.p-out-bottom{width: 100% !important; position: relative !important; left: 0 !important; top: auto !important; margin: 0 !important}
+.container > .row > .main .canvas .item .txt:hover{background-color: #ffffff; box-shadow: 0 0 2px 1px #cacaca}
+.container > .row > .main .canvas .item .txt:hover .coor{display: block;}
+.container > .row > .toolbar{padding-top: 2.5rem}
+.container > .row > .toolbar .list-group{width: 11rem}
+.container > .row > .toolbar .list-group .list-group-item .btn{width: 8.5rem; text-align: left;}
+.toast{position: absolute; width: 30rem; top: 30%; left: 40%; pointer-events: none}
+.image-control{position: absolute; width: 90%; top: 8%; left: 4%; padding: 2% 3% 0 0; background-color: rgba(249, 241, 211, 0.6); box-shadow: 0 0 3px 1px #dfdfdf}
+.image-control .item-control{width: 100%; padding-left: 4rem; padding-right: 3rem}
+.image-control .item-control .label-control{width: 4rem; font-size: 0.9rem; text-align: right; float: left; margin: 0 0 0 -4rem}
+.image-control .item-control .custom-range{}
+.image-control .item-control .percent{width: 3rem; float: right; margin: -1.8rem -3.5rem 0 0}
+.colorpicker-component .input-group-addon i{border: solid 1px #ced4da; border-left: 0; height: 100%; margin-top: -2px}

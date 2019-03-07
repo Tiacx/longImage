@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tool-长图生成器</title>
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/css/bootstrap-colorpicker.min.css">
+	<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-theme/0.1.0-beta.10/select2-bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header class="float-left text-center">
+		<h2 class="tit"><i class="fas fa-palette" style="color:#50bba8"></i> 长图生成器</h2>
+	</header>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3 panel">
+				<div class="tips">
+					<p class="p1">Tips.</p>
+					<p class="p2">1. 鼠标按上左上角 <i class="fas fa-list"></i> 可拖拽排序图片</p>
+					<p class="p2">2. 鼠标长按文字可以拖拽，右下角可缩放</p>
+					<p class="p2">3. 单击选中文字后，可编辑文字字体及样式</p>
+				</div>
+				<div class="panel-pic disabled">
+					<li class="list-group-item list-group-item-secondary">图片背景</li>
+					<li class="list-group-item txt-position">
+						<div class="input-group colorpicker-component colorpicker-pic">
+						    <input type="text" value="#ffffff" class="form-control" />
+						    <span class="input-group-addon"><i></i></span>
+						</div>
+					</li>
+				</div>
+				<div class="panel-txt disabled">
+					<ul class="list-group">
+						<li class="list-group-item list-group-item-secondary">字体布局</li>
+						<li class="list-group-item txt-position">
+							<div class="btn-group" role="group">
+								<button type="button" class="btn btn-outline-info active" data-position="p-free">自由</button>
+								<button type="button" class="btn btn-outline-info" data-position="p-top">居上</button>
+								<button type="button" class="btn btn-outline-info" data-position="p-center">居中</button>
+								<button type="button" class="btn btn-outline-info" data-position="p-bottom">居下</button>
+							</div>
+							<div class="blank7"></div>
+							<div class="btn-group" role="group">
+								<button type="button" class="btn btn-outline-info" data-position="p-out-top">&nbsp;&nbsp;图片外上方&nbsp;&nbsp;</button>
+								<button type="button" class="btn btn-outline-info" data-position="p-out-bottom">&nbsp;图片外下方&nbsp;&nbsp;</button>
+							</div>
+						</li>
+						<li class="list-group-item list-group-item-secondary">字体样式</li>
+						<li class="list-group-item">
+							<div class="form-group">
+								<label for="exampleFormControlSelect1">字体</label>
+								<select class="form-control font-family">
+									<option value="Helvetica">Helvetica</option>
+									<option value="Tahoma">Tahoma</option>
+									<option value="Arial">Arial</option>
+									<option value="Arial Black">Arial Black</option>
+									<option value="Arial Narrow">Arial Narrow</option>
+									<option value="Times New Roman">Times New Roman</option>
+									<option value="微软雅黑">微软雅黑</option>
+									<option value="宋体">宋体</option>
+									<option value="新宋体">新宋体</option>
+									<option value="仿宋_GB2312">仿宋_GB2312</option>
+									<option value="楷体_GB2312">楷体_GB2312</option>
+									<option value="黑体">黑体</option>
+									<option value="Courier New">Courier New</option>
+									<option value="Verdana">Verdana</option>
+									<option value="Georgia">Georgia</option>
+									<option value="Trebuchet MS">Trebuchet MS</option>
+									<option value="Impact">Impact</option>
+									<option value="Comic Sans MS">Comic Sans MS</option>
+									<option value="Lucida Sans Unicode">Lucida Sans Unicode</option>
+									<option value="Lucida Console">Lucida Console</option>
+									<option value="Garamond">Garamond</option>
+									<option value="MS Sans Serif">MS Sans Serif</option>
+									<option value="MS Serif">MS Serif</option>
+									<option value="Symbol">Symbol</option>
+									<option value="Bookman Old Style">Bookman Old Style</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label>字体颜色</label>
+								<div class="input-group colorpicker-component colorpicker-txt">
+								    <input type="text" value="#000000" class="form-control" />
+								    <span class="input-group-addon"><i></i></span>
+								</div>
+							</div>
+							<div class="form-group">
+								<label>字体大小</label>
+								<div class="btn-group" role="group">
+									<button type="button" class="btn btn-outline-info btn-txt-bold"><i class="fas fa-bold"></i> 加粗</button>
+									<button type="button" class="btn btn-outline-info btn-txt-plus"><i class="fas fa-plus"></i> 加大</button>
+									<button type="button" class="btn btn-outline-info btn-txt-minus"><i class="fas fa-minus"></i> 减小</button>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-6 main">
+				<div class="float-left">
+					<button class="btn btn-light btn-zoom-in" title="放大视图"><i class="fas fa-search-plus"></i></button>
+					<button class="btn btn-light btn-zoom-out" title="缩小视图"><i class="fas fa-search-minus"></i></button>
+				</div>
+				<div class="canvas-wrapper">
+					<div class="canvas"></div>
+				</div>
+			</div>
+			<div class="col-md-3 toolbar">
+				<div class="hidden"><input type="file" id="file" accept="image/*"></div>
+				<ul class="list-group">
+					<li class="list-group-item">
+						<button class="btn btn-sm btn-light btn-lg btn-add-image">
+							<i class="fas fa-file-image"></i>&nbsp;&nbsp;添加一张图片</li>
+						</button>
+					<li class="list-group-item">
+						<button class="btn btn-sm btn-light btn-lg btn-add-txt">
+							<i class="fas fa-text-height"></i> 添加一段文字
+						</button>
+					</li>
+					<li class="list-group-item">
+						<button class="btn btn-sm btn-light btn-lg btn-upload-image">
+							<i class="fas fa-copy"></i> 上传图片
+						</button>
+					</li>
+					<li class="list-group-item">
+						<button class="btn btn-sm btn-light btn-lg btn-download-image">
+							<i class="fas fa-download"></i> 下载图片
+						</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+		<div class="toast-header">
+		    <strong class="mr-auto">
+		    	<i class="far fa-meh-blank" style="color: #30ccc6"></i>
+		    	<i class="far fa-meh" style="color: #25b3ad"></i>
+		    	<i class="far fa-meh-rolling-eyes" style="color: #1f9490"></i>
+		    	<i class="far fa-surprise" style="color: #148c87"></i>
+		    	<i class="far fa-grin-squint-tears" style="color: #cc651a"></i>
+		   	</strong>
+			<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<div class="toast-body">###</div>
+	</div>
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/Sortable/1.8.3/Sortable.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/js/bootstrap-colorpicker.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+	<script type="text/javascript" src="//html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+	<script type="text/javascript" src="./canvas2image.js"></script>
+	<script type="module" src="main.js"></script>
+</body>
+</html>
